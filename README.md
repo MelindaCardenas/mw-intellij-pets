@@ -8,6 +8,7 @@ Inspired (very heavily) by [vscode-pets](https://github.com/tonybaloney/vscode-p
 - A pet that walks around, sits, follows you, interacts with you, basically a fwend
 - Pet variants: 5 cats, bunny, chicken
 - Pet scale setting, to adjust the size of your pet
+- Bunny (more pets TK) celebrates when your tests pass! 
 
 ## How to use
 

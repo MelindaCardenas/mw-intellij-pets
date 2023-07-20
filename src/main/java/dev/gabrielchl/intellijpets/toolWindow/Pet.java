@@ -1,6 +1,7 @@
 package dev.gabrielchl.intellijpets.toolWindow;
 
 import com.intellij.util.ui.JBUI;
+import dev.gabrielchl.intellijpets.PetTestStatusListener;
 import dev.gabrielchl.intellijpets.settings.AppSettingsState;
 import dev.gabrielchl.intellijpets.utils.Utils;
 
@@ -30,6 +31,7 @@ public class Pet {
         RUN,
         SIT,
         WALK,
+        CELEBRATE,
     }
 
     private final JPanel container;
@@ -105,6 +107,13 @@ public class Pet {
                 targetX = currentX;
             }
         });
+        PetTestStatusListener.registerCallback(new Runnable() {
+            @Override
+            public void run() {
+                xIndex = 0;
+                state = State.CELEBRATE;
+            }
+        });
     }
 
     public void tick() {
@@ -118,7 +127,7 @@ public class Pet {
         }
         if (xIndex >= sprites.get(state).size()) {
             xIndex = 0;
-            if (state == State.JUMP || state == State.ATTACK) {
+            if (state == State.JUMP || state == State.ATTACK || state == State.CELEBRATE) {
                 state = State.SIT;
             } else if (state == State.SIT) {
                 int rand = new Random().nextInt(10);

@@ -54,5 +54,6 @@
                 instance="dev.gabrielchl.intellijpets.settings.AppSettingsConfigurable"
                 id="dev.gabrielchl.intellijpets.settings.AppSettingsConfigurable"
                 displayName="Pets"/>
+        <testStatusListener implementation="dev.gabrielchl.intellijpets.PetTestStatusListener" />
     </extensions>
 </idea-plugin>
